@@ -1,0 +1,24 @@
+{
+  "name": "slipbook — invoice & receipt maker",
+  "short_name": "slipbook",
+  "description": "Make a clean invoice or receipt in under a minute, then print or save as PDF. No account, no fees, nothing leaves your device.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#FBF7EF",
+  "theme_color": "#FBF7EF",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

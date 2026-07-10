@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'none'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; object-src 'none'">
+  <title>slipbook — Free Invoice Maker, No Sign-Up</title>
+  <meta name="description" content="Make a clean invoice or receipt in under a minute, then print or save as PDF. No account, no fees, nothing leaves your device. Built for vendors, gig workers, and freelancers.">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://sreenivas-sadhu-prabhakara.github.io/slipbook/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Sreenivas Sadhu Prabhakara">
+  <meta name="keywords" content="free invoice maker, invoice generator no sign up, printable invoice template, receipt maker, invoice pdf free, invoice maker for small business, invoice for freelancers, invoice for vendors">
+  <meta name="theme-color" content="#FBF7EF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1F4E46" media="(prefers-color-scheme: dark)">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="slipbook">
+  <meta property="og:title" content="slipbook — Free Invoice Maker, No Sign-Up">
+  <meta property="og:description" content="Make a clean invoice or receipt in under a minute, then print or save as PDF. No account, no fees, nothing leaves your device. Built for vendors, gig workers, and freelancers.">
+  <meta property="og:url" content="https://sreenivas-sadhu-prabhakara.github.io/slipbook/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://sreenivas-sadhu-prabhakara.github.io/slipbook/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="slipbook — a clean invoice in under a minute">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="slipbook — Free Invoice Maker, No Sign-Up">
+  <meta name="twitter:description" content="Make a clean invoice or receipt in under a minute, then print or save as PDF. No account, no fees, nothing leaves your device. Built for vendors, gig workers, and freelancers.">
+  <meta name="twitter:image" content="https://sreenivas-sadhu-prabhakara.github.io/slipbook/og-image.png">
+  <meta name="twitter:image:alt" content="slipbook — a clean invoice in under a minute">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <!-- Structured data (data block; not affected by script-src) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "slipbook",
+    "description": "A free, private invoice and receipt maker. Add your items, then print or save as PDF. No account, no fees, and nothing leaves your device. Built for street vendors, gig workers, and freelancers.",
+    "url": "https://sreenivas-sadhu-prabhakara.github.io/slipbook/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any (modern web browser)",
+    "browserRequirements": "Requires a modern web browser with JavaScript enabled.",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "license": "https://opensource.org/licenses/MIT",
+    "author": { "@type": "Person", "name": "Sreenivas Sadhu Prabhakara" },
+    "softwareVersion": "0.1.0",
+    "featureList": [
+      "Reusable business profile with logo, saved on your device",
+      "Line items with automatic totals",
+      "Editable tax or VAT and discount",
+      "Multiple currencies with correct rounding",
+      "Auto-numbered invoices with editable dates and notes",
+      "Live invoice preview that prints or saves as PDF",
+      "Optional PAID stamp for cash receipts",
+      "Runs 100% offline in your browser"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is slipbook really free with no sign-up?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. There is no account, no email, and no fee. Open the page and start making an invoice — there is nothing to unlock and nothing to pay for."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I save my invoice as a PDF?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Click Print, then choose 'Save as PDF' as the destination in your browser's print dialog. The print layout shows only the invoice — none of the editing controls — so the PDF comes out clean."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does slipbook store my customer or invoice data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Everything stays in your browser using local storage on your own device. A strict Content-Security-Policy blocks all network requests, so your business details, customers, and amounts are never uploaded anywhere. A logo you add stays local as a data URL."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use slipbook offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. slipbook has no external fonts, scripts, or analytics, so once the page has loaded it keeps working with no internet connection at all."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#make">Skip to the invoice maker</a>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="top">
+    <div class="hero__rules" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <div class="brandline">
+        <svg class="brandmark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect x="4.5" y="3.5" width="23" height="25" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <line x1="9" y1="11" x2="23" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="9" y1="16" x2="23" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="9" y1="21" x2="18" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="wordmark">slipbook</span>
+      </div>
+      <p class="eyebrow">Invoices &amp; receipts &middot; no sign-up &middot; offline</p>
+      <h1 class="hero__title">A clean invoice, <span class="hero__accent">in under a minute.</span></h1>
+      <p class="hero__lede">
+        Add your items, then print or save as PDF. No account, no fees, nothing leaves your device.
+        Set your stall or business details once and slipbook remembers them &mdash; built for vendors,
+        gig workers, and freelancers.
+      </p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#make">Make an invoice</a>
+        <span class="hero__note">Everything stays in your browser.</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="make">
+    <!-- ============ ACTION BAR ============ -->
+    <div class="actionbar">
+      <div class="actionbar__inner">
+        <p class="actionbar__label">Your invoice</p>
+        <div class="actionbar__buttons">
+          <button type="button" class="btn btn--ghost" id="newBtn">New invoice</button>
+          <button type="button" class="btn btn--ghost" id="resetBtn">Reset all</button>
+          <button type="button" class="btn btn--primary" id="printBtn">Print / Save PDF</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="workspace">
+      <!-- ============ EDITOR ============ -->
+      <form class="editor" id="editor" novalidate aria-label="Invoice editor">
+
+        <fieldset class="panel">
+          <legend class="panel__legend">Your business</legend>
+          <div class="grid grid--2">
+            <label class="field field--full">
+              <span class="field__label">Business or stall name</span>
+              <input type="text" id="bizName" name="bizName" placeholder="e.g. Manila Street Eats" autocomplete="organization">
+            </label>
+            <label class="field">
+              <span class="field__label">Phone <span class="field__opt">optional</span></span>
+              <input type="tel" id="bizPhone" name="bizPhone" placeholder="e.g. 0917 000 0000" autocomplete="tel">
+            </label>
+            <label class="field">
+              <span class="field__label">Email <span class="field__opt">optional</span></span>
+              <input type="email" id="bizEmail" name="bizEmail" placeholder="you@example.com" autocomplete="email">
+            </label>
+            <label class="field field--full">
+              <span class="field__label">Address <span class="field__opt">optional</span></span>
+              <textarea id="bizAddress" name="bizAddress" rows="2" placeholder="Street, city, postal code"></textarea>
+            </label>
+          </div>
+          <div class="logo-row">
+            <div class="logo-preview" id="logoPreview" aria-hidden="true">
+              <span class="logo-preview__hint">No logo</span>
+            </div>
+            <div class="logo-controls">
+              <span class="field__label">Logo <span class="field__opt">optional &middot; stays on your device</span></span>
+              <div class="logo-buttons">
+                <label class="btn btn--file">
+                  Choose logo
+                  <input type="file" id="logoInput" accept="image/*" hidden>
+                </label>
+                <button type="button" class="btn btn--ghost btn--sm" id="logoClear" hidden>Remove</button>
+              </div>
+            </div>
+          </div>
+          <p class="panel__hint" id="bizSaved">Your business details are saved on this device, so you only set them once.</p>
+        </fieldset>
+
+        <fieldset class="panel">
+          <legend class="panel__legend">Bill to</legend>
+          <div class="grid grid--2">
+            <label class="field field--full">
+              <span class="field__label">Customer name <span class="field__opt">optional</span></span>
+              <input type="text" id="custName" name="custName" placeholder="e.g. Juan dela Cruz">
+            </label>
+            <label class="field field--full">
+              <span class="field__label">Contact or address <span class="field__opt">optional</span></span>
+              <textarea id="custContact" name="custContact" rows="2" placeholder="Phone, email, or address"></textarea>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="panel">
+          <legend class="panel__legend">Invoice details</legend>
+          <div class="grid grid--3">
+            <label class="field">
+              <span class="field__label">Invoice no.</span>
+              <input type="text" id="invNo" name="invNo" class="mono" placeholder="INV-0001">
+            </label>
+            <label class="field">
+              <span class="field__label">Date</span>
+              <input type="date" id="invDate" name="invDate" class="mono">
+            </label>
+            <label class="field">
+              <span class="field__label">Due date <span class="field__opt">optional</span></span>
+              <input type="date" id="dueDate" name="dueDate" class="mono">
+            </label>
+            <label class="field">
+              <span class="field__label">Currency</span>
+              <select id="currency" name="currency">
+                <option value="PHP">₱ &nbsp;PHP — Philippine peso</option>
+                <option value="USD">$ &nbsp;USD — US dollar</option>
+                <option value="INR">₹ &nbsp;INR — Indian rupee</option>
+                <option value="GBP">£ &nbsp;GBP — Pound sterling</option>
+                <option value="EUR">€ &nbsp;EUR — Euro</option>
+                <option value="AUD">$ &nbsp;AUD — Australian dollar</option>
+                <option value="GEN">¤ &nbsp;Generic — no symbol</option>
+              </select>
+            </label>
+          </div>
+          <label class="toggle toggle--paid">
+            <input type="checkbox" id="paidToggle" name="paidToggle">
+            <span>Mark this invoice <b>PAID</b> (adds a stamp)</span>
+          </label>
+        </fieldset>
+
+        <fieldset class="panel panel--items">
+          <legend class="panel__legend">Items</legend>
+          <div class="items-head" aria-hidden="true">
+            <span class="items-head__desc">Description</span>
+            <span class="items-head__qty">Qty</span>
+            <span class="items-head__price">Unit price</span>
+            <span class="items-head__total">Total</span>
+            <span class="items-head__x"></span>
+          </div>
+          <div id="itemRows" class="item-rows"></div>
+          <button type="button" class="btn btn--add" id="addRow">
+            <span aria-hidden="true">+</span> Add item
+          </button>
+        </fieldset>
+
+        <fieldset class="panel">
+          <legend class="panel__legend">Totals</legend>
+          <div class="grid grid--3">
+            <label class="field">
+              <span class="field__label">Tax label</span>
+              <input type="text" id="taxLabel" name="taxLabel" value="VAT" placeholder="VAT / GST / Sales tax">
+            </label>
+            <label class="field">
+              <span class="field__label">Tax rate <span class="field__opt">%</span></span>
+              <input type="number" id="taxRate" name="taxRate" class="mono" min="0" max="100" step="0.01" value="0" inputmode="decimal">
+            </label>
+            <div class="field">
+              <span class="field__label">Discount</span>
+              <div class="discount">
+                <input type="number" id="discountValue" name="discountValue" class="mono" min="0" step="0.01" value="0" inputmode="decimal" aria-label="Discount amount">
+                <div class="seg2" role="radiogroup" aria-label="Discount type">
+                  <label class="seg2__opt"><input type="radio" name="discountType" value="percent" checked><span>%</span></label>
+                  <label class="seg2__opt"><input type="radio" name="discountType" value="fixed"><span id="discFixedSym">$</span></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <label class="field field--full">
+            <span class="field__label">Notes / terms <span class="field__opt">optional</span></span>
+            <textarea id="notes" name="notes" rows="2" placeholder="e.g. Thank you for your business. GCash 0917 000 0000."></textarea>
+          </label>
+        </fieldset>
+      </form>
+
+      <!-- ============ LIVE PREVIEW (this is what prints) ============ -->
+      <div class="preview-wrap">
+        <p class="preview-wrap__hint" aria-hidden="true">Live preview &middot; this is what prints</p>
+        <article class="invoice" id="invoice" aria-label="Invoice preview">
+          <div class="invoice__perf invoice__perf--top" aria-hidden="true"></div>
+
+          <header class="doc-head">
+            <div class="doc-head__biz">
+              <img class="doc-head__logo" id="docLogo" alt="" hidden>
+              <div class="doc-head__biztext">
+                <h2 class="doc-head__name" id="docBizName">Your business name</h2>
+                <p class="doc-head__meta" id="docBizMeta"></p>
+              </div>
+            </div>
+            <div class="doc-head__title">
+              <p class="doc-title" id="docType">INVOICE</p>
+              <dl class="doc-meta">
+                <div><dt>No.</dt><dd class="mono" id="docInvNo">INV-0001</dd></div>
+                <div><dt>Date</dt><dd class="mono" id="docDate">—</dd></div>
+                <div class="doc-meta__due" id="docDueRow" hidden><dt>Due</dt><dd class="mono" id="docDue">—</dd></div>
+              </dl>
+            </div>
+          </header>
+
+          <section class="doc-billto" id="docBillToSection" hidden>
+            <p class="doc-billto__label">Bill to</p>
+            <p class="doc-billto__name" id="docCustName"></p>
+            <p class="doc-billto__contact" id="docCustContact"></p>
+          </section>
+
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th scope="col" class="doc-table__desc">Description</th>
+                <th scope="col" class="doc-table__num">Qty</th>
+                <th scope="col" class="doc-table__num">Unit price</th>
+                <th scope="col" class="doc-table__num">Amount</th>
+              </tr>
+            </thead>
+            <tbody id="docItems"></tbody>
+          </table>
+
+          <div class="doc-foot">
+            <div class="doc-notes" id="docNotesWrap" hidden>
+              <p class="doc-notes__label">Notes</p>
+              <p class="doc-notes__body" id="docNotes"></p>
+            </div>
+            <div class="doc-totals">
+              <div class="doc-totals__row"><span>Subtotal</span><span class="mono" id="docSubtotal">—</span></div>
+              <div class="doc-totals__row" id="docDiscRow" hidden><span id="docDiscLabel">Discount</span><span class="mono" id="docDiscount">—</span></div>
+              <div class="doc-totals__row" id="docTaxRow" hidden><span id="docTaxName">VAT</span><span class="mono" id="docTax">—</span></div>
+              <div class="doc-totals__row doc-totals__row--grand"><span>Total</span><span class="mono" id="docTotal">—</span></div>
+            </div>
+          </div>
+
+          <p class="doc-thanks" id="docThanks" hidden></p>
+          <div class="stamp" id="paidStamp" hidden aria-hidden="true">PAID</div>
+
+          <div class="invoice__perf invoice__perf--bottom" aria-hidden="true"></div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="foot">
+    <div class="foot__inner">
+      <p class="foot__disclaimer">
+        <strong>slipbook is a document tool, not tax or accounting advice</strong> &mdash; you are responsible
+        for correct rates and compliance in your own jurisdiction.
+      </p>
+      <p class="foot__meta">
+        <span>Works 100% offline</span><span class="foot__dot">&middot;</span>
+        <span>No account, nothing leaves your device</span><span class="foot__dot">&middot;</span>
+        <span>MIT&nbsp;License</span><span class="foot__dot">&middot;</span>
+        <span>&copy; 2026 Sreenivas&nbsp;Sadhu&nbsp;Prabhakara</span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
